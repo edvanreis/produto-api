@@ -28,10 +28,9 @@ private final  ProdutoUseCase useCase;
             @ApiResponse(responseCode = "500", description = "Failure")
     })
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<EstoqueDTO> save(@Validated @RequestBody EstoqueDTO estoque){
         try {
-            return ResponseEntity.ok().body(this.useCase.save(estoque));
+            return ResponseEntity.status(HttpStatus.CREATED).body(this.useCase.save(estoque));
         } catch (EstoqueApiException ex) {
             throw new EstoqueApiException(ex.getMessage());
         }
