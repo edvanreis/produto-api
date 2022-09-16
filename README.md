@@ -57,12 +57,9 @@
 </ul>
 <h2>Swagger Api Documentation:</h2>
 <ul>
-    <li>https://estoque-loja-api-new.herokuapp.com/swagger-ui/index.html#/</h1>
-</ul>
-<ul>
-    <li>https://estoque-loja-api.herokuapp.com/swagger-ui/index.html</h1>
+    <li>https://produto-loja-api.herokuapp.com/swagger-ui/index.html#/</h1>
 </ul>
 <h2>Exemplo do desafio:</h2>
 <ul>
-    <li>https://estoque-loja.herokuapp.com/calculo-estoque</h1>
+    <li>https://produto-loja.herokuapp.com//cadastrar</h1>
 </ul>  
