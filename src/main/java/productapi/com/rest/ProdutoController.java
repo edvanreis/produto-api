@@ -9,8 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import productapi.com.dto.EstoqueDTO;
+import productapi.com.dto.TypeDTO;
 import productapi.com.exception.EstoqueApiException;
 import productapi.com.usecase.ProdutoUseCase;
+
+import java.util.List;
 
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -35,6 +38,20 @@ private final  ProdutoUseCase useCase;
             throw new EstoqueApiException(ex.getMessage());
         }
 
+    }
 
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = ""),
+            @ApiResponse(responseCode = "400", description = "Invalid parameters"),
+            @ApiResponse(responseCode = "404", description = "not found"),
+            @ApiResponse(responseCode = "500", description = "Failure")
+    })
+    @GetMapping
+    public ResponseEntity<List<TypeDTO>> findAll() {
+        try {
+            return ResponseEntity.ok().body(this.useCase.findAll());
+        } catch (Exception ex) {
+            throw new EstoqueApiException(ex.getMessage());
+        }
     }
 }
